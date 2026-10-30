@@ -1,0 +1,15 @@
+services:
+  frontend:
+    image: serbrio/frontend
+    build:
+      context: /home/serbrio/MOOC/devops-with-docker/devops-docker-2/example-app/
+      dockerfile: ./Dockerfile.frontend
+    ports: 
+      - 5001:5001
+  backend:
+    image: serbrio/backend
+    build:
+      context: /home/serbrio/MOOC/devops-with-docker/devops-docker-2/example-app/
+      dockerfile: ./Dockerfile.backend
+    ports:
+      - 8080:8080
