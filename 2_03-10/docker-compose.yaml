@@ -2,14 +2,14 @@ services:
   frontend:
     image: serbrio/frontend
     build:
-      context: /home/serbrio/MOOC/devops-with-docker/devops-docker-2/example-app/
+      context: "${CONTEXT}" 
       dockerfile: ./Dockerfile.frontend
     ports: 
-      - 5001:5001
+      - "${FRONTEND_PORT}:5001"
   backend:
     image: serbrio/backend
     build:
-      context: /home/serbrio/MOOC/devops-with-docker/devops-docker-2/example-app/
+      context: "${CONTEXT}"
       dockerfile: ./Dockerfile.backend
     ports:
-      - 8080:8080
+      - "${BACKEND_PORT}:8080"
